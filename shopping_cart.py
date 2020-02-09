@@ -1,4 +1,5 @@
 # shopping_cart.py
+# Works Cited: https://github.com/prof-rossetti/intro-to-python/
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -38,6 +39,29 @@ selected_products = []
 
 i = "Start"
 # TODO: write some Python code here to produce the desired output
+
+number = 0
+
 while i != "DONE": 
     i = input("Please input product identifier: ")
-    selected_products.append(i)
+    if(i != "DONE"):
+        selected_products.append(i)
+    number = number +1
+
+selected_products
+
+count = 0
+
+while(count <= number):
+    for product in products:
+        if(product["id"] == selected_products[count]):
+            print(product["name"])
+            count = count + 1
+            
+
+
+
+
+
+
+
