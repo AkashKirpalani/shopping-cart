@@ -42,22 +42,18 @@ i = "Start"
 
 number = 0
 
-while i != "DONE": 
-    i = input("Please input product identifier: ")
-    if(i != "DONE"):
-        selected_products.append(i)
+#while i != "DONE": 
+id = input("Please input product identifier: ")
+if(id != "DONE"):
+    selected_products.append(id)
     number = number +1
 
-selected_products
+matching_products = [p for p in products if str(p["id"]) == str(id)]
+matching_product = matching_products[0]
+print("SELECTED PRODUCT:", matching_product["name"], "", matching_product["price"])
 
-count = 0
 
-while(count <= number):
-    for product in products:
-        if(product["id"] == selected_products[count]):
-            print(product["name"])
-            count = count + 1
-            
+
 
 
 
