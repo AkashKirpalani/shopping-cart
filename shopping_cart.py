@@ -37,10 +37,11 @@ def to_usd(my_price):
 
 selected_products = []
 
-i = "Start"
+id = ""
 # TODO: write some Python code here to produce the desired output
 
 number = 0
+total_price = 0
 
 while id != "DONE": 
     id = input("Please input product identifier: ")
@@ -51,10 +52,10 @@ while id != "DONE":
         matching_products = [p for p in products if str(p["id"]) == str(id)]
         matching_product = matching_products[0]
         print("SELECTED PRODUCT:", matching_product["name"], "", matching_product["price"])
+        total_price =  total_price + matching_product["price"]
 
 
-
-
+print("TOTAL PRICE: ", total_price)
 
 
 
