@@ -33,7 +33,8 @@ def to_usd(my_price):
     Example: to_usd(4000.444444)
     Returns: $4,000.44
     """
-    return f"${my_price:,.2f}" #> $12,000.71
+    return f"${my_price:,.2f}" 
+#$12,000.71
 
 selected_products = []
 
@@ -55,10 +56,10 @@ for id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(id)]
     matching_product = matching_products[0]
     total_price =  total_price + matching_product["price"]
-    print("SELECTED PRODUCT", matching_product["name"], "", matching_product["price"])
+    print("SELECTED PRODUCT", matching_product["name"], "", to_usd(matching_product["price"]))
 
 
-print("TOTAL PRICE: ", total_price)
+print("TOTAL PRICE: ", to_usd(total_price))
 
 
 
