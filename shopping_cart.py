@@ -42,17 +42,20 @@ id = ""
 
 number = 0
 total_price = 0
+selected_ids = []
 
 while id != "DONE": 
     id = input("Please input product identifier: ")
     if(id == "DONE"):
-        selected_products.append(id)
-        number = number +1
+        number = number + 1
     else:
-        matching_products = [p for p in products if str(p["id"]) == str(id)]
-        matching_product = matching_products[0]
-        print("SELECTED PRODUCT:", matching_product["name"], "", matching_product["price"])
-        total_price =  total_price + matching_product["price"]
+        selected_ids.append(id)
+
+for id in selected_ids:  
+    matching_products = [p for p in products if str(p["id"]) == str(id)]
+    matching_product = matching_products[0]
+    total_price =  total_price + matching_product["price"]
+    print("SELECTED PRODUCT", matching_product["name"], "", matching_product["price"])
 
 
 print("TOTAL PRICE: ", total_price)
