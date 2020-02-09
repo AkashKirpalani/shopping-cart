@@ -36,7 +36,8 @@ def to_usd(my_price):
 
 selected_products = []
 
+i = "Start"
 # TODO: write some Python code here to produce the desired output
 while i != "DONE": 
-    i = rawinput("Please input product identifier: ")
+    i = input("Please input product identifier: ")
     selected_products.append(i)
