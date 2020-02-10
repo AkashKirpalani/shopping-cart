@@ -1,5 +1,7 @@
 # shopping_cart.py
 # Works Cited: https://github.com/prof-rossetti/intro-to-python/
+import datetime
+
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -42,7 +44,7 @@ id = ""
 # TODO: write some Python code here to produce the desired output
 
 number = 0
-total_price = 0
+subtotal_price = 0
 selected_ids = []
 
 while id != "DONE": 
@@ -52,15 +54,29 @@ while id != "DONE":
     else:
         selected_ids.append(id)
 
+print("-----------------------------------")
+print("WHOLEPAYCHECK GROCERY")
+print("WWW.WHOLEPAYCHECK.COM")
+print("-----------------------------------")
+d = datetime.datetime.today()
+print("CHECK OUT AT: ", d.strftime("%Y-%m-%d %I:%M %p"))
+print("-----------------------------------")
+print("SELECTED PRODUCTS:")
 for id in selected_ids:  
     matching_products = [p for p in products if str(p["id"]) == str(id)]
     matching_product = matching_products[0]
-    total_price =  total_price + matching_product["price"]
-    print("SELECTED PRODUCT", matching_product["name"], "", to_usd(matching_product["price"]))
+    subtotal_price =  subtotal_price + matching_product["price"]
+    print("...", matching_product["name"], "", to_usd(matching_product["price"]))
 
-
+print("-----------------------------------")
+print("SUBTOTAL: ", to_usd(subtotal_price))
+tax = subtotal_price * 0.0875
+print("TAX: ", to_usd(tax))
+total_price = subtotal_price + tax
 print("TOTAL PRICE: ", to_usd(total_price))
-
+print("-----------------------------------")
+print("THANKS, SEE YOU AGAIN SOON")
+print("-----------------------------------")
 
 
 
