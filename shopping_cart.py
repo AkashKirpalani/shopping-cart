@@ -50,9 +50,19 @@ selected_ids = []
 while id != "DONE": 
     id = input("Please input product identifier: ")
     if(id == "DONE"):
-        number = number + 1
-    else:
-        selected_ids.append(id)
+        break
+    if(id.isdigit()): 
+        int_id = int(id)
+        if(int_id < 0):
+            print("Hey, are you sure that product id is correct? Please try again!")
+        if(int_id > 20):
+            print("Hey, are you sure that product id is correct? Please try again!")
+        else:
+            selected_ids.append(id)
+
+    else: 
+         print("Hey, are you sure that product id is correct? Please try again!")
+
 
 print("-----------------------------------")
 print("WHOLEPAYCHECK GROCERY")
@@ -66,7 +76,7 @@ for id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(id)]
     matching_product = matching_products[0]
     subtotal_price =  subtotal_price + matching_product["price"]
-    print("...", matching_product["name"], "", to_usd(matching_product["price"]))
+    print("...", matching_product["name"], "", "("+str(to_usd(matching_product["price"]))+")")
 
 print("-----------------------------------")
 print("SUBTOTAL: ", to_usd(subtotal_price))
@@ -75,7 +85,7 @@ print("TAX: ", to_usd(tax))
 total_price = subtotal_price + tax
 print("TOTAL PRICE: ", to_usd(total_price))
 print("-----------------------------------")
-print("THANKS, SEE YOU AGAIN SOON")
+print("THANKS, SEE YOU AGAIN SOON!")
 print("-----------------------------------")
 
 
