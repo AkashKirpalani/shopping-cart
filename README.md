@@ -23,6 +23,7 @@ python shopping_cart.py
 ```
 
 ## Usage
+Run the script like this: 
 ```sh
-python app/shopping-cart.py
+python shopping-cart/shopping_cart.py
 ```
