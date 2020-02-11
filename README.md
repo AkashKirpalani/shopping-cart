@@ -6,16 +6,23 @@ Use Github.com's online interface to fork this repository then clone or download
 ```sh
 cd shopping-cart
 ```
+You could also download it to your desktop in which case use this command line to access file:
+```sh
+cd  ~/Desktop/shopping-cart
+```
 ## Setup
 
 Create and activate a new Anaconda virtual environment
-
 ```sh
 conda create -n shopping-env python=3.7
 conda activate shopping-env
 ```
+And from in this virtual environment run 
+```sh
+python shopping_cart.py
+```
 
 ## Usage
 ```sh
-python path/to/your/file.py
+python app/shopping-cart.py
 ```
