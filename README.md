@@ -1,4 +1,5 @@
-# Shopping-cart
+# my project
+
 
 ## Installation
 Fork it, clone it, nav from command line:
@@ -12,4 +13,3 @@ Virtual environment?
 ```sh
 python path/to/your/file.py
 ```
-# Setup
